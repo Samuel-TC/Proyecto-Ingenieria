@@ -1,0 +1,32 @@
+<br>
+<div class="container">
+  <input type="text" class="form-control" placeholder="Ingrese su cédula" [(ngModel)]="persona.cedula" name="cedula">
+  <br>
+  <input type="text" class="form-control" placeholder="Ingrese su nombre" [(ngModel)]="persona.nombre" name="nombre">
+  <br>
+  <input type="text" class="form-control" placeholder="Ingrese sus apellidos" [(ngModel)]="persona.apellidos" name="apellidos">
+  <br>
+  <button class="btn btn-primary" (click)="addPersona()"> Agregar </button>
+    <br>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Cedula</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of personas">
+          <td>{{ persona.cedula }}</td>
+          <td>{{ persona.nombre }}</td>
+          <td>{{ persona.apellidos }}</td>
+          <td><button class="btn btn-secondary" (click)="loadPersona(persona.idPersona)">Editar</button></td>
+          <td><button class="btn btn-danger" (click)="deletePersona(persona.idPersona)">Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+</div>

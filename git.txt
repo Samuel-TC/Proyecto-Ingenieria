@@ -1,0 +1,4 @@
+git init 
+git status / para verificar lo que se va a subir
+git add  ./
+git commit -m "mensaje" / confirmar el cambio 
